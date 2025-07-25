@@ -40,13 +40,13 @@ Follow these instructions to get a copy of the project up and running on your lo
 - Python 3.8+
 - `pip` for package management
 - **FFmpeg**: MoviePy requires FFmpeg for video and audio processing. You must have the FFmpeg executable installed and accessible in your system's PATH.
-  - You can download it from the [official FFmpeg website](https://ffmpeg.org/download.html).
+  - You can download it from the https://ffmpeg.org/download.html .
 
 ### Installation
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/file-converter.git](https://github.com/your-username/file-converter.git)
+    git clone https://github.com/ArjunDas2003/File-Converter.git
     cd file-converter
     ```
 
