@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal File Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero-section">
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h1>Universal File Converter</h1>
+                </div>
+                <p class="subtitle">Select a tool to start converting your files instantly.</p>
+            </div>
+
+            <div class="tool-grid">
+                <a href="{{ url_for('images_to_pdf') }}" class="tool-card">
+                    <div class="tool-icon-wrapper" style="background-color: #ffeff0;">
+                        <i class="fas fa-file-pdf" style="color: #ef4444;"></i>
+                    </div>
+                    <h3>Images to PDF</h3>
+                    <p>Combine JPG, PNG files into a single PDF.</p>
+                </a>
+                <a href="{{ url_for('mp4_to_mp3') }}" class="tool-card">
+                    <div class="tool-icon-wrapper" style="background-color: #eefce8;">
+                        <i class="fas fa-file-audio" style="color: #22c55e;"></i>
+                    </div>
+                    <h3>MP4 to MP3</h3>
+                    <p>Extract audio from your video files.</p>
+                </a>
+                <!-- Add more tool cards here as you add converters -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

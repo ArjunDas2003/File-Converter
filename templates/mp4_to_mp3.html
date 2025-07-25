@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP4 to MP3 Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="mp4-to-mp3">
+    <div class="hero-section">
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-file-audio"></i>
+                    <h1>MP4 to MP3 Converter</h1>
+                </div>
+                <p class="subtitle">Extract high-quality audio from your MP4 video files.</p>
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <div class="flash flash-error">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <div class="converter-card">
+                <form method="post" enctype="multipart/form-data" id="converterForm">
+                    <div class="upload-section">
+                        <div class="drag-drop-area" id="dragDropArea">
+                            <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <h3>Drag & Drop your MP4 file here</h3>
+                            <p>or click to browse</p>
+                            <!-- FIX: Hide the default file input button -->
+                            <input type="file" name="file" id="fileInput" required accept="video/mp4" style="display: none;">
+                        </div>
+                        <div class="file-info" id="fileInfo" style="display: none;"></div>
+                    </div>
+                    
+                    <button type="submit" class="convert-btn" id="convertBtn" disabled>
+                        <span class="btn-content"><i class="fas fa-magic"></i> Convert & Download MP3</span>
+                        <div class="loading-spinner" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Converting...</div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
